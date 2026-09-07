@@ -8,7 +8,7 @@ This repository hosts my professional GitHub portfolio for IS 3060, showcasing m
 - GitHub Pages (hosting)
 
 ## Website
-https://gracesburke.github.io/Portfolio-Homepage/
+https://gracesburke.github.io/
 
 ## Contact
 grace.burke@utah.edu
