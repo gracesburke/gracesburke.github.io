@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grace Burke | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --ink: #1f2a44;
+      --paper: #faf9f6;
+      --panel: #ffffff;
+      --line: #dcd8cf;
+      --brass: #a8823c;
+      --text: #23262b;
+      --muted: #5b5f68;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--text);
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--ink);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.9rem 1rem;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #e8e6df;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: border-color 0.2s ease;
+    }
+
+    nav a:hover, nav a:focus-visible {
+      border-color: var(--brass);
+    }
+
+    /* Header / hero */
+    header.hero {
+      background: var(--ink);
+      color: #f2f0ea;
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header.hero h1 {
+      color: #ffffff;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+    }
+
+    header.hero p.title {
+      margin-top: 0.5rem;
+      font-size: 1.15rem;
+      color: var(--brass);
+    }
+
+    header.hero p.school {
+      margin-top: 0.25rem;
+      color: #b9b6ad;
+      font-size: 1rem;
+    }
+
+    /* Sections */
+    section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--brass);
+      display: inline-block;
+    }
+
+    section p {
+      max-width: 68ch;
+    }
+
+    /* Skills */
+    ul.skills {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem 1.5rem;
+    }
+
+    ul.skills li {
+      padding-left: 1.1rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    ul.skills li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      background: var(--brass);
+      border-radius: 50%;
+    }
+
+    /* Projects table */
+    table.projects {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+
+    table.projects th, table.projects td {
+      text-align: left;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--line);
+      font-size: 0.95rem;
+    }
+
+    table.projects th {
+      background: var(--ink);
+      color: #f2f0ea;
+      font-weight: 600;
+    }
+
+    table.projects tr:nth-child(even) td {
+      background: var(--panel);
+    }
+
+    table.projects tr:nth-child(odd) td {
+      background: #f2f0e9;
+    }
+
+    p.note {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    /* Resume */
+    .resume-box {
+      border: 1px dashed var(--line);
+      border-radius: 4px;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      background: var(--panel);
+    }
+
+    .resume-box a.button {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.6rem 1.4rem;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    ul.contact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.contact li {
+      margin-bottom: 0.6rem;
+    }
+
+    ul.contact a {
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--brass);
+    }
+
+    ul.contact a:hover { color: var(--brass); }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 480px) {
+      ul.skills { grid-template-columns: 1fr; }
+      nav { gap: 1rem; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Grace Burke</h1>
+    <p class="title">Finance &amp; Information Systems Student</p>
+    <p class="school">University of Utah, David Eccles School of Business</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a sophomore at the University of Utah's David Eccles School of Business, majoring in
+      Finance with a FinTech emphasis and minoring in Business AI. This past summer, I interned at
+      Celtic Bank as a FinTech &amp; AI Automation Analyst, working across embedded finance product
+      design and automation. I'm especially drawn to the payments and SaaS side of fintech, and I'm
+      fascinated by how quickly AI is reshaping financial services. Outside of class, I run an
+      independent AI consulting practice, building agentic workflows using platforms like MindStudio.
+      Going forward, I want to sit at the intersection of finance and AI — learning to build reliable
+      agents and apply them to real financial problems, so I can help firms adopt AI thoughtfully
+      rather than just quickly.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Financial Analysis</li>
+      <li>FinTech &amp; Embedded Finance</li>
+      <li>AI Prompt Engineering</li>
+      <li>Agentic AI Workflows (MindStudio, Claude/Cowork)</li>
+      <li>Microsoft Excel</li>
+      <li>Data Analytics</li>
+      <li>Compliance &amp; Regulatory Awareness</li>
+      <li>Business Development</li>
+      <li>SQL</li>
+      <li>Notion</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <table class="projects">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dashboard for Managerial Insight</td>
+          <td>Business intelligence dashboard analyzing a client's rental and repair data across multiple store locations</td>
+        </tr>
+        <tr>
+          <td>Cloud BI Platform Evaluation</td>
+          <td>Gemini + Google Cloud platform evaluation for cross-location data tracking</td>
+        </tr>
+        <tr>
+          <td>CRM &amp; AI Interaction Prototype</td>
+          <td>Chatbot / AI interaction test for customer engagement across store locations</td>
+        </tr>
+        <tr>
+          <td>Implementation &amp; Change Management Plan</td>
+          <td>Rollout and change management strategy for a new cross-location tracking system</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">Placeholders from IS 3060's KPMG Consulting Simulation — will be updated with real deliverables throughout the semester.</p>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <div class="resume-box">
+      <p>Download my current resume as a PDF.</p>
+      <a class="button" href="Grace_Burke_Resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact">
+      <li>Email: <a href="mailto:grace.burke@utah.edu">grace.burke@utah.edu</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/grace-s-burke" target="_blank" rel="noopener">linkedin.com/in/grace-s-burke</a></li>
+      <li>GitHub: <a href="https://github.com/gracesburke" target="_blank" rel="noopener">github.com/gracesburke</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2026 Grace Burke
+  </footer>
+
+</body>
+</html>
